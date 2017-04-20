@@ -103,4 +103,14 @@ class Newznab::ApiTest < Minitest::Test
       assert_equal :music, resp.function
     end
   end
+
+  def test_book_search
+    refute_nil newznab
+    assert_nothing_raised do
+      resp = newznab.book_search(query: 'bible', extended: true, limit: 5)
+      refute_nil resp
+      assert_equal 5, resp.count
+      assert_equal :book, resp.function
+    end
+  end
 end

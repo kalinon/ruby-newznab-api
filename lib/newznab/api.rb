@@ -33,7 +33,7 @@ module Newznab
   # @since 0.1.0
   module Api
     API_FORMAT = 'json'
-    API_FUNCTIONS = [:caps, :search, :tvsearch, :movie, :music]
+    API_FUNCTIONS = [:caps, :search, :tvsearch, :movie, :music, :book]
 
     ##
     # Raised when a function is not implemented on the current API
@@ -160,7 +160,7 @@ module Newznab
       end
 
       ##
-      # Perform a movie-search with the provided optional params
+      # Perform a music-search with the provided optional params
       # @param album [String]	Album title (URL/UTF-8 encoded). Case insensitive.
       # @param artist [String] Artist name (URL/UTF-8 encoded). Case insensitive.
       # @param label [String] Publisher/Label name (URL/UTF-8 encoded). Case insensitive.
@@ -199,6 +199,28 @@ module Newznab
         end
 
         Newznab::Api::SearchResults.new(_make_request(:music, **args), :music, args)
+      end
+
+      ##
+      # Perform a book-search with the provided optional params
+      # @param title [String]	Book title (URL/UTF-8 encoded). Case insensitive.
+      # @param author [String] Author name (URL/UTF-8 encoded). Case insensitive.
+      # @macro search.params
+      # @macro raise.NewznabAPIError
+      # @return [Newznab::SearchResults]
+      # @since 0.1.0
+      def book_search(title: nil, author: nil, **params)
+        args = _parse_search_args(**params)
+
+        unless title.nil?
+          args[:title] = title.to_s.encode('utf-8')
+        end
+
+        unless author.nil?
+          args[:author] = author.to_s.encode('utf-8')
+        end
+
+        Newznab::Api::SearchResults.new(_make_request(:book, **args), :book, args)
       end
 
       ##
