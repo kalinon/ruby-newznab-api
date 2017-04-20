@@ -75,4 +75,12 @@ class Newznab::ApiTest < Minitest::Test
     end
   end
 
+  def test_tv_search
+    refute_nil newznab
+    assert_nothing_raised do
+      resp = newznab.tv_search(rageid: 17525, extended: true, limit: 5)
+      refute_nil resp
+      assert_equal 5, resp['channel']['item'].count
+    end
+  end
 end

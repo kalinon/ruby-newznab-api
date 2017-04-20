@@ -8,3 +8,5 @@
 /spec/reports/
 /tmp/
 /.env
+# Ignore cassettes for now, untill they can be cleaned
+/test/cassettes

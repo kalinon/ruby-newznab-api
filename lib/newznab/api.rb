@@ -10,6 +10,16 @@ require 'open-uri'
 #   @raise [FunctionNotSupportedError] indicating the resource requested is not supported
 # @!macro [new] raise.NewznabAPIError
 #   @raise [NewznabAPIError] indicating the api request code received
+# @!macro [new] search.params
+#   @param query [String] Search input (URL/UTF-8 encoded). Case insensitive.
+#   @param group [Array] List of usenet groups to search delimited by ”,”
+#   @param limit [Integer] Upper limit for the number of items to be returned.
+#   @param cat [Array] List of categories to search delimited by ”,”
+#   @param attrs [Array] List of requested extended attributes delimeted by ”,”
+#   @param extended [true, false] List all extended attributes (attrs ignored)
+#   @param delete [true, false] Delete the item from a users cart on download.
+#   @param maxage [Integer] Only return results which were posted to usenet in the last x days.
+#   @param offset [Integer] The 0 based query offset defining which part of the response we want.
 
 ##
 # Base Newznab module
@@ -21,7 +31,7 @@ module Newznab
   # @since 0.1.0
   module Api
     API_FORMAT = 'json'
-    API_FUNCTIONS = [:caps, :search]
+    API_FUNCTIONS = [:caps, :search, :tvsearch]
 
     ##
     # Raised when a function is not implemented on the current API
@@ -42,7 +52,7 @@ module Newznab
 
     class << self
 
-      attr_accessor :api_uri, :api_key, :api_timeout, :logger
+      attr_accessor :api_uri, :api_key, :api_timeout, :api_rate_limit, :logger
 
       ##
       # @return [Newznab::API]
@@ -50,6 +60,8 @@ module Newznab
       # @param key [String] Newznab API Key
       # @since 0.1.0
       def new(uri: nil, key: nil)
+
+        @api_rate_limit = 0
 
         @logger = MonoLogger.new(STDOUT)
         @logger.level = MonoLogger::DEBUG
@@ -87,26 +99,64 @@ module Newznab
 
       ##
       # Perform a search with the provided optional params
-      # @param query [String] Search input (URL/UTF-8 encoded). Case insensitive.
-      # @param group [Array] List of usenet groups to search delimited by ”,”
-      # @param limit [Integer] Upper limit for the number of items to be returned.
-      # @param cat [Array] List of categories to search delimited by ”,”
-      # @param attrs [Array] List of requested extended attributes delimeted by ”,”
-      # @param extended [true, false] List all extended attributes (attrs ignored)
-      # @param delete [true, false] Delete the item from a users cart on download.
-      # @param maxage [Integer] Only return results which were posted to usenet in the last x days.
-      # @param offset [Integer] The 0 based query offset defining which part of the response we want.
+      # @macro search.params
       # @return [Hash]
       # @since 0.1.0
       # @macro raise.NewznabAPIError
-      def search(query: nil, group: [], limit: nil, cat: [], attrs: [], extended: false, delete: false, maxage: nil, offset: nil)
+      def search(**params)
+        args = _parse_search_args(**params)
+        _make_request(:search, **args)
+      end
+
+      ##
+      # Perform a tv-search with the provided optional params
+      # @param rageid [Integer] TVRage id of the item being queried.
+      # @param season [String] Season string, e.g S13 or 13 for the item being queried.
+      # @param ep [String] Episode string, e.g E13 or 13 for the item being queried.
+      # @macro search.params
+      # @macro raise.NewznabAPIError
+      def tv_search(rageid: nil, season: nil, ep: nil, **params)
+        args = _parse_search_args(**params)
+
+        unless rageid.nil?
+          args[:rageid] = URI::encode(rageid.to_s.encode('utf-8'))
+        end
+
+        unless season.nil?
+          args[:season] = URI::encode(season.to_s.encode('utf-8'))
+        end
+
+        unless ep.nil?
+          args[:ep] = URI::encode(ep.to_s.encode('utf-8'))
+        end
+
+        _make_request(:tvsearch, **args)
+
+      end
+
+      ##
+      # @param function [Symbol] Newznab function
+      # @param params [Hash] The named key value pairs of query parameters
+      # @macro raise.NewznabAPIError
+      # @macro raise.FunctionNotSupportedError
+      def get(function, **params)
+        _make_request(function, **params)
+      end
+
+      private
+
+      ##
+      # @macro search.params
+      # @return [Hash]
+      # @since 0.1.0
+      def _parse_search_args(query: nil, group: [], limit: nil, cat: [], attrs: [], extended: false, delete: false, maxage: nil, offset: nil)
         params = {
             extended: extended ? '1' : '0',
             del: delete ? '1' : '0',
         }
 
         unless query.nil?
-          params[:q] = URI::encode(query.encode('utf-8'))
+          params[:q] = URI::encode(query.to_s.encode('utf-8'))
         end
 
         unless maxage.nil?
@@ -133,20 +183,8 @@ module Newznab
           params[:group] = attrs.collect { |o| o.to_s.encode('utf-8') }.join(',')
         end
 
-        _make_request(:search, **params)
-
+        params
       end
-
-      ##
-      # @param function [Symbol] Newznab function
-      # @param params [Hash] The named key value pairs of query parameters
-      # @macro raise.NewznabAPIError
-      # @macro raise.FunctionNotSupportedError
-      def get(function, **params)
-        _make_request(function, **params)
-      end
-
-      private
 
       ##
       # Will attempt to parse the {api_uri} and append '/api' to the end if needed
@@ -194,6 +232,12 @@ module Newznab
       # @since 0.1.0
       # @macro raise.NewznabAPIError
       def _make_url_request(url, function, **params)
+
+        # If we have a rate_limit set, wait that long before sending a request
+        if api_rate_limit > 0
+          sleep api_rate_limit
+        end
+
         # Default options hash
         options = {
             accept: :json,
