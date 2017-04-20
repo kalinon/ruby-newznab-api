@@ -70,8 +70,16 @@ module Newznab
       end
     end
 
-    def respond_to_missing?
-      true
+    def respond_to_missing?(id, *args)
+      begin
+        if @_attributes.has_key? id.to_s
+          true
+        elsif @metadata.has_key? id.to_s
+          true
+        else
+          super
+        end
+      end
     end
   end
 end
