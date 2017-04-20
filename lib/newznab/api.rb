@@ -3,6 +3,7 @@ require 'rest-client'
 require 'cgi'
 require 'json'
 require 'mono_logger'
+require 'open-uri'
 
 ## Yard Doc generation stuff
 # @!macro [new] raise.FunctionNotSupportedError
@@ -82,6 +83,58 @@ module Newznab
       # @macro raise.NewznabAPIError
       def caps
         @caps ||= _make_request(:caps)
+      end
+
+      ##
+      # Perform a search with the provided optional params
+      # @param query [String] Search input (URL/UTF-8 encoded). Case insensitive.
+      # @param group [Array] List of usenet groups to search delimited by ”,”
+      # @param limit [Integer] Upper limit for the number of items to be returned.
+      # @param cat [Array] List of categories to search delimited by ”,”
+      # @param attrs [Array] List of requested extended attributes delimeted by ”,”
+      # @param extended [true, false] List all extended attributes (attrs ignored)
+      # @param delete [true, false] Delete the item from a users cart on download.
+      # @param maxage [Integer] Only return results which were posted to usenet in the last x days.
+      # @param offset [Integer] The 0 based query offset defining which part of the response we want.
+      # @return [Hash]
+      # @since 0.1.0
+      # @macro raise.NewznabAPIError
+      def search(query: nil, group: [], limit: nil, cat: [], attrs: [], extended: false, delete: false, maxage: nil, offset: nil)
+        params = {
+            extended: extended ? '1' : '0',
+            del: delete ? '1' : '0',
+        }
+
+        unless query.nil?
+          params[:q] = URI::encode(query.encode('utf-8'))
+        end
+
+        unless group.empty?
+          params[:group] = group.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        end
+
+        unless limit.empty?
+          params[:limit] = limit.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        end
+
+        unless cat.empty?
+          params[:cat] = cat.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        end
+
+        unless attrs.empty?
+          params[:group] = attrs.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        end
+
+        unless maxage.nil?
+          params[:maxage] = maxage.to_i
+        end
+
+        unless offset.nil?
+          params[:offset] = offset.to_i
+        end
+
+        _make_request(:search, **params)
+
       end
 
       ##
