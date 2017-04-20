@@ -75,12 +75,13 @@ module Newznab
       end
 
       ##
-      # Query the server for supported features and the protocol version and other metadata
+      # Return the server's supported features and the protocol version and other metadata
+      # Will perform a request to server if not set
       # @return [Hash]
       # @since 0.1.0
       # @macro raise.NewznabAPIError
       def caps
-        _make_request(:caps)
+        @caps ||= _make_request(:caps)
       end
 
       ##

@@ -39,4 +39,26 @@ class Newznab::ApiTest < Minitest::Test
     assert_equal 2, newz.api_timeout, 'Change timeout to 2'
   end
 
+  def test_api_caps
+    refute_nil newznab
+    assert_nothing_raised do
+      response = newznab.caps
+      refute_nil response
+
+      assert response.has_key? 'server'
+      assert response.has_key? 'limits'
+      assert response.has_key? 'registration'
+      assert response.has_key? 'searching'
+      assert response.has_key? 'categories'
+      assert response.has_key? 'groups'
+      assert response.has_key? 'genres'
+    end
+  end
+
+  def test_not_supported
+    assert_raises Newznab::Api::FunctionNotSupportedError do
+      newznab.get(:unsupported)
+    end
+  end
+
 end

@@ -13,3 +13,12 @@ module Minitest::Assertions
     yield
   end
 end
+
+class Minitest::Test
+
+  # Helper to create a default newznab api using env's
+  def newznab
+    @newz ||= Newznab::Api.new
+  end
+
+end
