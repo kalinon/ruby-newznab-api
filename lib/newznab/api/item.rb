@@ -1,5 +1,7 @@
 module Newznab
   module Api
+    ##
+    # Class representing a single Newznab item
     class Item
 
       attr_reader :title, :guid, :link, :pub_date, :description, :metadata
@@ -7,6 +9,7 @@ module Newznab
       ##
       # @param args [Hash<String, Object>] Item hash from response
       # @return [Newznab::Item]
+      # @since 0.1.0
       def initialize(args)
 
         @raw_resp = args
@@ -58,6 +61,7 @@ module Newznab
         new_meta
       end
 
+      # @since 0.1.0
       def method_missing(id, *args)
         begin
           if @_attributes.has_key? id.to_s
@@ -70,6 +74,7 @@ module Newznab
         end
       end
 
+      # @since 0.1.0
       def respond_to_missing?(id, *args)
         begin
           if @_attributes.has_key? id.to_s

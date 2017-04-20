@@ -3,8 +3,7 @@ require 'newznab/api'
 module Newznab
   module Api
     ##
-    # Enumerable list for multiple Newznab results
-    # @since 0.1.0
+    # Enumerable list for multiple results
     class List
       include Enumerable
 
@@ -13,6 +12,7 @@ module Newznab
       attr_reader :limit
       attr_reader :cvos
 
+      # @since 0.1.0
       def initialize(resp, options)
         update_ivals(resp)
 
@@ -21,12 +21,14 @@ module Newznab
         end
       end
 
+      # @since 0.1.0
       def each
         @cvos.each { |c| yield c }
       end
 
       # Returns the current page the object is on
       # @return [Integer]
+      # @since 0.1.0
       def page
         (self.offset / self.limit) + 1
       end
@@ -48,6 +50,7 @@ module Newznab
       protected
 
       ##
+      # Updates array list to new values
       # @param new_cvol [Hash] Response hash from {Newznab::Api}
       # @since 0.1.0
       def update_ivals(new_cvol)
@@ -61,6 +64,7 @@ module Newznab
         end
       end
 
+      # @since 0.1.0
       def method_missing(id, *args)
         begin
           if @_attributes.has_key? id.to_s
@@ -73,6 +77,7 @@ module Newznab
         end
       end
 
+      # @since 0.1.0
       def respond_to_missing?(id, *args)
         begin
           if @_attributes.has_key? id.to_s
@@ -86,6 +91,8 @@ module Newznab
       end
     end
 
+    ##
+    # Enumerable list for multiple {Newznab::Api::Item} results. Including pagination, and methods to navigate them
     class SearchResults < List
 
       attr_reader :raw_resp, :query, :function
@@ -93,6 +100,7 @@ module Newznab
       # @param resp [Hash] Response hash from {Newznab::Api}
       # @param function [Symbol] Function from {Newznab::Api::API_FUNCTIONS}
       # @param query [Hash] Query parameters from search
+      # @since 0.1.0
       def initialize(resp, function, query)
         super(resp, query)
 
@@ -111,6 +119,7 @@ module Newznab
 
       # ##
       # Moves search to the next offset results
+      # @since 0.1.0
       def next_page!
         return nil if (self.offset + self.total_pages) >= self.total_count
         @query[:offset] = self.offset + self.limit
@@ -119,6 +128,7 @@ module Newznab
 
       ##
       # Moves search to the previous offset results
+      # @since 0.1.0
       def prev_page!
         return nil if @offset == 0
         @query[:offset] = self.offset - self.limit
