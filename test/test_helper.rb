@@ -25,7 +25,7 @@ class Minitest::Test
 
   # Helper to create a default newznab api using env's
   def newznab
-    @newz ||= Newznab::Api.new
+    @newz ||= Newznab::Api.new(uri: 'https://api.newznab.com', key: '7e8896464895c1cde33759b8307f5cf8')
   end
 
   def before_setup

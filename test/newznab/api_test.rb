@@ -63,4 +63,33 @@ class Newznab::ApiTest < Minitest::Test
     end
   end
 
+  # FIXME
+  # def test_details
+  #   guid = '8610de2d24383b1efd513da1b30e96b5'
+  #
+  #   assert_raises Newznab::Api::FunctionDisabledError do
+  #     newznab.get_details(guid)
+  #   end
+  # end
+  #
+  # def test_nfo
+  #   guid = '8610de2d24383b1efd513da1b30e96b5'
+  #
+  #   assert_raises Newznab::Api::FunctionDisabledError do
+  #     newznab.get_nfo(guid)
+  #   end
+  # end
+
+  def test_disabled_function
+    guid = '8610de2d24383b1efd513da1b30e96b5'
+
+    assert_raises Newznab::Api::FunctionDisabledError do
+      newznab.get_details(guid)
+    end
+
+    assert_raises Newznab::Api::FunctionDisabledError do
+      newznab.get_nfo(guid)
+    end
+  end
+
 end

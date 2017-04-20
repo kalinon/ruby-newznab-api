@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'dotenv-rails'
   spec.add_development_dependency 'faker'
   spec.add_development_dependency 'minitest-vcr'
+  spec.add_development_dependency 'nokogiri'
 
   # Dependencies
   spec.add_dependency 'rest-client', '~> 2.0'
