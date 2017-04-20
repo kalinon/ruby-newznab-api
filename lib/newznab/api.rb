@@ -66,7 +66,7 @@ module Newznab
         @api_rate_limit = 0
 
         @logger = MonoLogger.new(STDOUT)
-        @logger.level = MonoLogger::DEBUG
+        @logger.level = MonoLogger::WARN
 
         # Newznab API Key. Set to the environmental variable NEWZNAB_API_KEY by default if present
         @api_key = ENV['NEWZNAB_API_KEY'] || nil
