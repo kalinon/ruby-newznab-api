@@ -100,7 +100,13 @@ module Newznab
       @raw_resp = resp
       @query = query
 
-      @cvos = resp['channel']['item'].collect { |o| Newznab::Item.new(o) }
+      # Check for multiple/single results
+      if resp['channel']['item'].kind_of? Array
+        @cvos = resp['channel']['item'].collect { |o| Newznab::Item.new(o) }
+      elsif resp['channel']['item'].kind_of? Hash
+        @cvos = [Newznab::Item.new(resp['channel']['item'])]
+      end
+
     end
 
     # ##

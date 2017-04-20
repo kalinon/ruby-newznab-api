@@ -13,7 +13,7 @@ module Newznab
       @raw_resp = args
       @metadata = {}
 
-      args.each do |k, v|
+      args.each_pair do |k, v|
         case k
           when 'title'
             @title = v
@@ -53,9 +53,10 @@ module Newznab
         else
           metadata[name] = [value]
         end
-
       end
-      metadata
+      new_meta = {}
+      metadata.each { |k, v| new_meta[k] = v.count.eql?(1) ? v.first : v }
+      new_meta
     end
 
     def method_missing(id, *args)
