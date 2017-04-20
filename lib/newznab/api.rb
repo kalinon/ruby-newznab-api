@@ -33,7 +33,7 @@ module Newznab
   # @since 0.1.0
   module Api
     API_FORMAT = 'json'
-    API_FUNCTIONS = [:caps, :search, :tvsearch, :movie]
+    API_FUNCTIONS = [:caps, :search, :tvsearch, :movie, :music]
 
     ##
     # Raised when a function is not implemented on the current API
@@ -158,10 +158,47 @@ module Newznab
 
         Newznab::Api::SearchResults.new(_make_request(:movie, **args), :movie, args)
       end
-          args[:season] = genre.to_s.encode('utf-8')
+
+      ##
+      # Perform a movie-search with the provided optional params
+      # @param album [String]	Album title (URL/UTF-8 encoded). Case insensitive.
+      # @param artist [String] Artist name (URL/UTF-8 encoded). Case insensitive.
+      # @param label [String] Publisher/Label name (URL/UTF-8 encoded). Case insensitive.
+      # @param track [String] Track name (URL/UTF-8 encoded). Case insensitive.
+      # @param year [String] Four digit year of release.
+      # @param genre [String] A genre string i.e. ‘Romance’ would match ‘(Comedy, Drama, Indie, Romance)’
+      # @macro search.params
+      # @macro raise.NewznabAPIError
+      # @return [Newznab::SearchResults]
+      # @since 0.1.0
+      def music_search(album: nil, artist: nil, label: nil, track: nil, year: nil, genre: nil, **params)
+        args = _parse_search_args(**params)
+
+        unless album.nil?
+          args[:album] = album.to_s.encode('utf-8')
         end
 
-        Newznab::Api::SearchResults.new(_make_request(:movie, **args), :tvsearch, args)
+        unless artist.nil?
+          args[:artist] = artist.to_s.encode('utf-8')
+        end
+
+        unless label.nil?
+          args[:label] = label.to_s.encode('utf-8')
+        end
+
+        unless track.nil?
+          args[:track] = track.to_s.encode('utf-8')
+        end
+
+        unless year.nil?
+          args[:year] = year.to_s.encode('utf-8')
+        end
+
+        unless genre.nil?
+          args[:genre] = genre.to_s.encode('utf-8')
+        end
+
+        Newznab::Api::SearchResults.new(_make_request(:music, **args), :music, args)
       end
 
       ##

@@ -93,4 +93,14 @@ class Newznab::ApiTest < Minitest::Test
       assert_equal :movie, resp.function
     end
   end
+
+  def test_music_search
+    refute_nil newznab
+    assert_nothing_raised do
+      resp = newznab.music_search(query: 'Bach', extended: true, limit: 5)
+      refute_nil resp
+      assert_equal 5, resp.count
+      assert_equal :music, resp.function
+    end
+  end
 end
