@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&del=0&extended=1&limit=1&o=json&q=This%20Old%20House&t=tvsearch
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 20:07:16 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=u1nnp8ifd4ckd1r1mba5re2kc0; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"oznzb","description":"oznzb
+        Feed","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"webadmin@newznab.com
+        (oznzb)","category":{},"image":{"url":"https:\/\/api.newznab.com\/templates\/default\/images\/banner.jpg","title":"oznzb","link":"https:\/\/api.newznab.com\/","description":"Visit
+        oznzb - Wordpress manager"},"response":{"@attributes":{"offset":"0","total":"844"}},"item":{"title":"170417-TOHS38191080WA20x264A69","guid":"https:\/\/api.newznab.com\/details\/8610de2d24383b1efd513da1b30e96b5","link":"https:\/\/api.newznab.com\/getnzb\/8610de2d24383b1efd513da1b30e96b5.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/8610de2d24383b1efd513da1b30e96b5#comments","pubDate":"Mon,
+        17 Apr 2017 15:41:54 +1000","category":"Movies > HD","description":"170417-TOHS38191080WA20x264A69","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/8610de2d24383b1efd513da1b30e96b5.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"736950045","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2040"}},{"@attributes":{"name":"size","value":"736950045"}},{"@attributes":{"name":"guid","value":"8610de2d24383b1efd513da1b30e96b5"}},{"@attributes":{"name":"files","value":"20"}},{"@attributes":{"name":"poster","value":"nonscene@Ef.net
+        (EF)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"0000000"}},{"@attributes":{"name":"grabs","value":"1"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Mon,
+        17 Apr 2017 15:27:34 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.tv"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]}}}'
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 20:07:17 GMT
+recorded_with: VCR 3.0.3

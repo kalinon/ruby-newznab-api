@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&del=0&extended=1&limit=5&o=json&q=This%20Old%20House&t=tvsearch
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 18:05:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=32kb6a65tqeehqncu1k7nljpd3; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"oznzb","description":"oznzb
+        Feed","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"webadmin@newznab.com
+        (oznzb)","category":{},"image":{"url":"https:\/\/api.newznab.com\/templates\/default\/images\/banner.jpg","title":"oznzb","link":"https:\/\/api.newznab.com\/","description":"Visit
+        oznzb - Wordpress manager"},"response":{"@attributes":{"offset":"0","total":"844"}},"item":[{"title":"170417-TOHS38191080WA20x264A69","guid":"https:\/\/api.newznab.com\/details\/8610de2d24383b1efd513da1b30e96b5","link":"https:\/\/api.newznab.com\/getnzb\/8610de2d24383b1efd513da1b30e96b5.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/8610de2d24383b1efd513da1b30e96b5#comments","pubDate":"Mon,
+        17 Apr 2017 15:41:54 +1000","category":"Movies > HD","description":"170417-TOHS38191080WA20x264A69","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/8610de2d24383b1efd513da1b30e96b5.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"736950045","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2040"}},{"@attributes":{"name":"size","value":"736950045"}},{"@attributes":{"name":"guid","value":"8610de2d24383b1efd513da1b30e96b5"}},{"@attributes":{"name":"files","value":"20"}},{"@attributes":{"name":"poster","value":"nonscene@Ef.net
+        (EF)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"0000000"}},{"@attributes":{"name":"grabs","value":"1"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Mon,
+        17 Apr 2017 15:27:34 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.tv"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"170417-ATOHS15191080WA20x264A69","guid":"https:\/\/api.newznab.com\/details\/588c2fde97199cedbd76b6516eaec19a","link":"https:\/\/api.newznab.com\/getnzb\/588c2fde97199cedbd76b6516eaec19a.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/588c2fde97199cedbd76b6516eaec19a#comments","pubDate":"Mon,
+        17 Apr 2017 15:41:54 +1000","category":"Movies > HD","description":"170417-ATOHS15191080WA20x264A69","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/588c2fde97199cedbd76b6516eaec19a.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"635151679","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2040"}},{"@attributes":{"name":"size","value":"635151679"}},{"@attributes":{"name":"guid","value":"588c2fde97199cedbd76b6516eaec19a"}},{"@attributes":{"name":"files","value":"19"}},{"@attributes":{"name":"poster","value":"nonscene@Ef.net
+        (EF)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"0000000"}},{"@attributes":{"name":"grabs","value":"2"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Mon,
+        17 Apr 2017 15:27:18 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.hdtv"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"This.Old.House.TruePDF-May.2017","guid":"https:\/\/api.newznab.com\/details\/8b48b0eac183fbadf0b4c12842da33fa","link":"https:\/\/api.newznab.com\/getnzb\/8b48b0eac183fbadf0b4c12842da33fa.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/8b48b0eac183fbadf0b4c12842da33fa#comments","pubDate":"Sat,
+        01 Apr 2017 16:59:18 +1000","category":"Books > Mags","description":"This.Old.House.TruePDF-May.2017","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/8b48b0eac183fbadf0b4c12842da33fa.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"42215196","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"7000"}},{"@attributes":{"name":"category","value":"7010"}},{"@attributes":{"name":"size","value":"42215196"}},{"@attributes":{"name":"guid","value":"8b48b0eac183fbadf0b4c12842da33fa"}},{"@attributes":{"name":"files","value":"7"}},{"@attributes":{"name":"poster","value":"SinnerG
+        <SinnerG@somewhere.nl>"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"14"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Sat,
+        01 Apr 2017 12:48:07 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.e-book.magazines"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"This
+        Old House S38E13 1080i HDTV DD2.0 MPEG2-TrollHD","guid":"https:\/\/api.newznab.com\/details\/b23de49aaf27ee758fc91156fc0c3f36","link":"https:\/\/api.newznab.com\/getnzb\/b23de49aaf27ee758fc91156fc0c3f36.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/b23de49aaf27ee758fc91156fc0c3f36#comments","pubDate":"Mon,
+        20 Mar 2017 14:07:25 +1000","category":"TV > HD","description":"This Old House
+        S38E13 1080i HDTV DD2.0 MPEG2-TrollHD","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/b23de49aaf27ee758fc91156fc0c3f36.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"2743644576","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"5000"}},{"@attributes":{"name":"category","value":"5040"}},{"@attributes":{"name":"size","value":"2743644576"}},{"@attributes":{"name":"guid","value":"b23de49aaf27ee758fc91156fc0c3f36"}},{"@attributes":{"name":"files","value":"31"}},{"@attributes":{"name":"poster","value":"Yenc@power-post.org
+        (Yenc-PP-A&A)"}},{"@attributes":{"name":"season","value":"S38"}},{"@attributes":{"name":"episode","value":"E13"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"tvtitle","value":"Arlington
+        Arts & Crafts | Decorative Touches Make the Difference"}},{"@attributes":{"name":"tvairdate","value":"Sat,
+        04 Feb 2017 00:00:00 +1000"}},{"@attributes":{"name":"grabs","value":"4"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Wed,
+        08 Mar 2017 20:00:13 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.hdtv"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"Ask
+        This Old House S15E13 1080i HDTV DD2.0 MPEG2-TrollHD","guid":"https:\/\/api.newznab.com\/details\/3a7c53eed095a22cae061eef27bfac4c","link":"https:\/\/api.newznab.com\/getnzb\/3a7c53eed095a22cae061eef27bfac4c.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/3a7c53eed095a22cae061eef27bfac4c#comments","pubDate":"Mon,
+        20 Mar 2017 10:23:32 +1000","category":"TV > HD","description":"Ask This Old
+        House S15E13 1080i HDTV DD2.0 MPEG2-TrollHD","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/3a7c53eed095a22cae061eef27bfac4c.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"2837076546","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"5000"}},{"@attributes":{"name":"category","value":"5040"}},{"@attributes":{"name":"size","value":"2837076546"}},{"@attributes":{"name":"guid","value":"3a7c53eed095a22cae061eef27bfac4c"}},{"@attributes":{"name":"files","value":"31"}},{"@attributes":{"name":"poster","value":"Yenc@power-post.org
+        (Yenc-PP-A&A)"}},{"@attributes":{"name":"season","value":"S15"}},{"@attributes":{"name":"episode","value":"E13"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"tvtitle","value":"Rooftop
+        Garden, Stains, Shed"}},{"@attributes":{"name":"tvairdate","value":"Sat, 04
+        Feb 2017 00:00:00 +1000"}},{"@attributes":{"name":"grabs","value":"3"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Wed,
+        08 Mar 2017 16:00:03 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.hdtv"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]}]}}'
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 18:05:54 GMT
+recorded_with: VCR 3.0.3

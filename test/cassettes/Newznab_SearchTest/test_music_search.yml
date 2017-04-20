@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&del=0&extended=1&limit=5&o=json&q=Bach&t=music
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 21:01:10 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=vvives9if202go722t88406o17; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"oznzb","description":"oznzb
+        Feed","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"webadmin@newznab.com
+        (oznzb)","category":{},"image":{"url":"https:\/\/api.newznab.com\/templates\/default\/images\/banner.jpg","title":"oznzb","link":"https:\/\/api.newznab.com\/","description":"Visit
+        oznzb - Wordpress manager"},"response":{"@attributes":{"offset":"0","total":"10000"}},"item":[{"title":"2uw6Bb1wl4RCE1X3ZjdR5","guid":"https:\/\/api.newznab.com\/details\/b966d54775bffc11ea0ec4b6377318cc","link":"https:\/\/api.newznab.com\/getnzb\/b966d54775bffc11ea0ec4b6377318cc.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/b966d54775bffc11ea0ec4b6377318cc#comments","pubDate":"Fri,
+        21 Apr 2017 06:35:52 +1000","category":"Misc > Other","description":"2uw6Bb1wl4RCE1X3ZjdR5","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/b966d54775bffc11ea0ec4b6377318cc.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"40937218","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"8000"}},{"@attributes":{"name":"category","value":"8010"}},{"@attributes":{"name":"size","value":"40937218"}},{"@attributes":{"name":"guid","value":"b966d54775bffc11ea0ec4b6377318cc"}},{"@attributes":{"name":"files","value":"22"}},{"@attributes":{"name":"poster","value":"Niemand@live.nl
+        (JanvanIngrid)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"0"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 06:06:53 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.cores"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"8F3mbG8aC3JIq3nV","guid":"https:\/\/api.newznab.com\/details\/f92869da397c12fe834bcdecc6151bad","link":"https:\/\/api.newznab.com\/getnzb\/f92869da397c12fe834bcdecc6151bad.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/f92869da397c12fe834bcdecc6151bad#comments","pubDate":"Fri,
+        21 Apr 2017 05:28:00 +1000","category":"Misc > Other","description":"8F3mbG8aC3JIq3nV","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/f92869da397c12fe834bcdecc6151bad.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"124105283","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"8000"}},{"@attributes":{"name":"category","value":"8010"}},{"@attributes":{"name":"size","value":"124105283"}},{"@attributes":{"name":"guid","value":"f92869da397c12fe834bcdecc6151bad"}},{"@attributes":{"name":"files","value":"14"}},{"@attributes":{"name":"poster","value":"Yenc@yenc-post.org
+        (Yenc-PP-A&A)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"3"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 05:16:46 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.mp3"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"8F3mbG8aC3JIq3nV","guid":"https:\/\/api.newznab.com\/details\/b70f096cd51537af21a40c66a29933a0","link":"https:\/\/api.newznab.com\/getnzb\/b70f096cd51537af21a40c66a29933a0.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/b70f096cd51537af21a40c66a29933a0#comments","pubDate":"Fri,
+        21 Apr 2017 05:28:01 +1000","category":"Misc > Other","description":"8F3mbG8aC3JIq3nV","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/b70f096cd51537af21a40c66a29933a0.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"124044281","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"8000"}},{"@attributes":{"name":"category","value":"8010"}},{"@attributes":{"name":"size","value":"124044281"}},{"@attributes":{"name":"guid","value":"b70f096cd51537af21a40c66a29933a0"}},{"@attributes":{"name":"files","value":"13"}},{"@attributes":{"name":"poster","value":"Yenc@yenc-post.org
+        (Yenc-PP-A&A)"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"1"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 05:16:46 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.usc"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"[SeiyaAnon]
+        Saint Seiya TV 046","guid":"https:\/\/api.newznab.com\/details\/ad24a50c12071966282987c5e5827392","link":"https:\/\/api.newznab.com\/getnzb\/ad24a50c12071966282987c5e5827392.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/ad24a50c12071966282987c5e5827392#comments","pubDate":"Fri,
+        21 Apr 2017 06:44:27 +1000","category":"TV > Anime","description":"[SeiyaAnon]
+        Saint Seiya TV 046","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/ad24a50c12071966282987c5e5827392.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"1949866433","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"5000"}},{"@attributes":{"name":"category","value":"5070"}},{"@attributes":{"name":"size","value":"1949866433"}},{"@attributes":{"name":"guid","value":"ad24a50c12071966282987c5e5827392"}},{"@attributes":{"name":"files","value":"8"}},{"@attributes":{"name":"poster","value":"Anime
+        Tosho <usenet.bot@animetosho.org>"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"0"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 04:59:36 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.multimedia.anime.highspeed"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"[SeiyaAnon]
+        Saint Seiya TV 045","guid":"https:\/\/api.newznab.com\/details\/3533e3eb2a07dc6ff7bde3da6b8c5e25","link":"https:\/\/api.newznab.com\/getnzb\/3533e3eb2a07dc6ff7bde3da6b8c5e25.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/3533e3eb2a07dc6ff7bde3da6b8c5e25#comments","pubDate":"Fri,
+        21 Apr 2017 06:35:53 +1000","category":"TV > Anime","description":"[SeiyaAnon]
+        Saint Seiya TV 045","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/3533e3eb2a07dc6ff7bde3da6b8c5e25.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"2059279202","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"5000"}},{"@attributes":{"name":"category","value":"5070"}},{"@attributes":{"name":"size","value":"2059279202"}},{"@attributes":{"name":"guid","value":"3533e3eb2a07dc6ff7bde3da6b8c5e25"}},{"@attributes":{"name":"files","value":"9"}},{"@attributes":{"name":"poster","value":"Anime
+        Tosho <usenet.bot@animetosho.org>"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"grabs","value":"0"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 04:52:46 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.multimedia.anime.highspeed"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]}]}}'
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 21:01:10 GMT
+recorded_with: VCR 3.0.3

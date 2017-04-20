@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&guid=8610de2d24383b1efd513da1b30e96b5&o=json&t=details
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 22:30:55 GMT
+      Content-Type:
+      - text/xml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=3mvkvfj2eps75t29hqed3sh8k2; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <error code="200" description="API Disabled"/>
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 22:30:56 GMT
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&guid=8610de2d24383b1efd513da1b30e96b5&o=json&t=getnfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 22:30:58 GMT
+      Content-Type:
+      - text/xml
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=2bhn8jhu7j047i2omaukkvsjd0; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <error code="200" description="API Disabled"/>
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 22:30:59 GMT
+recorded_with: VCR 3.0.3
