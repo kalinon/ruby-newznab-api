@@ -6,7 +6,7 @@ class Newznab::ItemTest < Minitest::Test
   def test_single_item_conversion
     item = newznab.tv_search(query: 'This Old House', extended: true, limit: 1).first
     refute_nil item
-    assert_kind_of Newznab::Item, item
+    assert_kind_of Newznab::Api::Item, item
 
     refute_nil item.title
     refute_nil item.guid
@@ -19,8 +19,8 @@ class Newznab::ItemTest < Minitest::Test
   def test_multiple_item_conversion
     resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 10)
     refute_nil resp.first
-    assert_kind_of Newznab::Item, resp.first
-    resp.each { |o| assert_kind_of Newznab::Item, o }
+    assert_kind_of Newznab::Api::Item, resp.first
+    resp.each { |o| assert_kind_of Newznab::Api::Item, o }
     assert_equal 10, resp.count
   end
 

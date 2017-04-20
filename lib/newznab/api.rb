@@ -1,6 +1,6 @@
 require 'newznab/api/version'
-require 'newznab/list'
-require 'newznab/item'
+require 'newznab/api/list'
+require 'newznab/api/item'
 require 'rest-client'
 require 'cgi'
 require 'json'
@@ -107,7 +107,7 @@ module Newznab
       # @macro raise.NewznabAPIError
       def search(**params)
         args = _parse_search_args(**params)
-        Newznab::SearchResults.new(_make_request(:search, **args), :search, args)
+        Newznab::Api::SearchResults.new(_make_request(:search, **args), :search, args)
       end
 
       ##
@@ -134,7 +134,7 @@ module Newznab
           args[:ep] = URI::encode(ep.to_s.encode('utf-8'))
         end
 
-        Newznab::SearchResults.new(_make_request(:tvsearch, **args), :tvsearch, args)
+        Newznab::Api::SearchResults.new(_make_request(:tvsearch, **args), :tvsearch, args)
       end
 
       ##

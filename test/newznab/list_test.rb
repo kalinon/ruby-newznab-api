@@ -5,7 +5,7 @@ class Newznab::ListTest < Minitest::Test
   
   def test_search_results
     resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 10)
-    assert_kind_of Newznab::SearchResults, resp, 'Is a Newznab::SearchResults'
+    assert_kind_of Newznab::Api::SearchResults, resp, 'Is a Newznab::SearchResults'
     refute_nil resp, 'Response is not empty'
     assert_equal 10, resp.count, 'Response count equals limit'
     refute_nil resp.first
@@ -27,7 +27,7 @@ class Newznab::ListTest < Minitest::Test
 
   def test_search_results_offset
     resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 10, offset: 50)
-    assert_kind_of Newznab::SearchResults, resp, 'Is a Newznab::SearchResults'
+    assert_kind_of Newznab::Api::SearchResults, resp, 'Is a Newznab::Api::SearchResults'
     refute_nil resp, 'Response is not empty'
     assert_equal 10, resp.count, 'Response count equals limit'
     refute_nil resp.first
@@ -54,7 +54,7 @@ class Newznab::ListTest < Minitest::Test
       resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 5)
       refute_nil resp, 'Response is not empty'
       assert_equal 5, resp.count, 'Response count equals limit'
-      assert_kind_of Newznab::SearchResults, resp, 'Is a Newznab::SearchResults'
+      assert_kind_of Newznab::Api::SearchResults, resp, 'Is a Newznab::Api::SearchResults'
       assert resp.version
       assert_equal '2.0', resp.version
     end
