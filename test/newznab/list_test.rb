@@ -2,7 +2,7 @@ require 'test_helper'
 require 'newznab/api'
 
 class Newznab::ListTest < Minitest::Test
-
+  
   def test_search_results
     resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 10)
     assert_kind_of Newznab::SearchResults, resp, 'Is a Newznab::SearchResults'

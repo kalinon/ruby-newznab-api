@@ -2,7 +2,7 @@ require 'test_helper'
 require 'newznab/api'
 
 class Newznab::ApiTest < Minitest::Test
-
+  
   def test_that_it_has_a_version_number
     refute_nil ::Newznab::Api::VERSION
   end
