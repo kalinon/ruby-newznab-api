@@ -59,28 +59,25 @@ class Newznab::ApiTest < Minitest::Test
 
   def test_not_supported
     assert_raises Newznab::Api::FunctionNotSupportedError do
-      newznab.get(:unsupported)
+      newznab.get(api_function: :unsupported)
     end
   end
 
   def test_search
     refute_nil newznab
     assert_nothing_raised do
-      # Should not call more than one http request per test for VCR
-      # refute_nil newznab.caps
-      # assert_equal 'yes', newznab.caps['searching']['search']['@attributes']['available']
-      resp = newznab.search(limit: 5)
+      resp = newznab.search(query: 'This Old House', limit: 50)
       refute_nil resp
-      assert_equal 5, resp['channel']['item'].count
+      assert_equal 50, resp.count
     end
   end
 
   def test_tv_search
     refute_nil newznab
     assert_nothing_raised do
-      resp = newznab.tv_search(rageid: 17525, extended: true, limit: 5)
+      resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 5)
       refute_nil resp
-      assert_equal 5, resp['channel']['item'].count
+      assert_equal 5, resp.count
     end
   end
 end

@@ -1,4 +1,5 @@
 require 'newznab/api/version'
+require 'newznab/list'
 require 'rest-client'
 require 'cgi'
 require 'json'
@@ -100,12 +101,12 @@ module Newznab
       ##
       # Perform a search with the provided optional params
       # @macro search.params
-      # @return [Hash]
+      # @return [Newznab::SearchResults]
       # @since 0.1.0
       # @macro raise.NewznabAPIError
       def search(**params)
         args = _parse_search_args(**params)
-        _make_request(:search, **args)
+        Newznab::SearchResults.new(_make_request(:search, **args), :search, args)
       end
 
       ##
@@ -115,6 +116,8 @@ module Newznab
       # @param ep [String] Episode string, e.g E13 or 13 for the item being queried.
       # @macro search.params
       # @macro raise.NewznabAPIError
+      # @return [Newznab::SearchResults]
+      # @since 0.1.0
       def tv_search(rageid: nil, season: nil, ep: nil, **params)
         args = _parse_search_args(**params)
 
@@ -130,17 +133,16 @@ module Newznab
           args[:ep] = URI::encode(ep.to_s.encode('utf-8'))
         end
 
-        _make_request(:tvsearch, **args)
-
+        Newznab::SearchResults.new(_make_request(:tvsearch, **args), :tvsearch, args)
       end
 
       ##
-      # @param function [Symbol] Newznab function
+      # @param api_function [Symbol] Newznab function
       # @param params [Hash] The named key value pairs of query parameters
       # @macro raise.NewznabAPIError
       # @macro raise.FunctionNotSupportedError
-      def get(function, **params)
-        _make_request(function, **params)
+      def get(api_function:, **params)
+        _make_request(api_function, **params)
       end
 
       private
@@ -156,7 +158,7 @@ module Newznab
         }
 
         unless query.nil?
-          params[:q] = URI::encode(query.to_s.encode('utf-8'))
+          params[:q] = query.to_s.encode('utf-8')
         end
 
         unless maxage.nil?

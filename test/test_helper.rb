@@ -29,7 +29,7 @@ class Minitest::Test
   end
 
   def before_setup
-    VCR.insert_cassette name
+    VCR.insert_cassette File.join(self.class.to_s, name)
   end
 
   def after_teardown
