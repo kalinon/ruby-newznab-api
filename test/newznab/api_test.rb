@@ -2,7 +2,7 @@ require 'test_helper'
 require 'newznab/api'
 
 class Newznab::ApiTest < Minitest::Test
-  
+
   def test_that_it_has_a_version_number
     refute_nil ::Newznab::Api::VERSION
   end
@@ -69,6 +69,7 @@ class Newznab::ApiTest < Minitest::Test
       resp = newznab.search(query: 'This Old House', limit: 50)
       refute_nil resp
       assert_equal 50, resp.count
+      assert_equal :search, resp.function
     end
   end
 
@@ -78,9 +79,10 @@ class Newznab::ApiTest < Minitest::Test
       resp = newznab.tv_search(query: 'This Old House', extended: true, limit: 5)
       refute_nil resp
       assert_equal 5, resp.count
+      assert_equal :tvsearch, resp.function
+
     end
   end
-
 
   def test_movie_search
     refute_nil newznab
@@ -88,6 +90,7 @@ class Newznab::ApiTest < Minitest::Test
       resp = newznab.movie_search(query: 'Sparticus', extended: true, limit: 5)
       refute_nil resp
       assert_equal 5, resp.count
+      assert_equal :movie, resp.function
     end
   end
 end
