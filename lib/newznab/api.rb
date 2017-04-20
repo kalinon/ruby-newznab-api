@@ -1,5 +1,6 @@
 require 'newznab/api/version'
 require 'newznab/list'
+require 'newznab/item'
 require 'rest-client'
 require 'cgi'
 require 'json'

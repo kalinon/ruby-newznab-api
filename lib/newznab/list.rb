@@ -92,8 +92,7 @@ module Newznab
       @raw_resp = resp
       @query = query
 
-      #TODO: Replace with Newznab::Item
-      @cvos = resp['channel']['item']
+      @cvos = resp['channel']['item'].collect { |o| Newznab::Item.new(o) }
     end
 
     # ##
