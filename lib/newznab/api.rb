@@ -33,7 +33,7 @@ module Newznab
   # @since 0.1.0
   module Api
     API_FORMAT = 'json'
-    API_FUNCTIONS = [:caps, :search, :tvsearch]
+    API_FUNCTIONS = [:caps, :search, :tvsearch, :movie]
 
     ##
     # Raised when a function is not implemented on the current API
@@ -112,29 +112,51 @@ module Newznab
 
       ##
       # Perform a tv-search with the provided optional params
-      # @param rageid [Integer] TVRage id of the item being queried.
+      # @param rid [Integer] TVRage id of the item being queried.
       # @param season [String] Season string, e.g S13 or 13 for the item being queried.
       # @param ep [String] Episode string, e.g E13 or 13 for the item being queried.
       # @macro search.params
       # @macro raise.NewznabAPIError
       # @return [Newznab::SearchResults]
       # @since 0.1.0
-      def tv_search(rageid: nil, season: nil, ep: nil, **params)
+      def tv_search(rid: nil, season: nil, ep: nil, **params)
         args = _parse_search_args(**params)
 
-        unless rageid.nil?
-          args[:rageid] = URI::encode(rageid.to_s.encode('utf-8'))
+        unless rid.nil?
+          args[:rid] = rid.to_s.encode('utf-8')
         end
 
         unless season.nil?
-          args[:season] = URI::encode(season.to_s.encode('utf-8'))
+          args[:season] = season.to_s.encode('utf-8')
         end
 
         unless ep.nil?
-          args[:ep] = URI::encode(ep.to_s.encode('utf-8'))
+          args[:ep] = ep.to_s.encode('utf-8')
         end
 
         Newznab::Api::SearchResults.new(_make_request(:tvsearch, **args), :tvsearch, args)
+      end
+
+      ##
+      # Perform a tv-search with the provided optional params
+      # @param imdbid [String] IMDB id of the item being queried e.g. 0058935.
+      # @param genre [String] A genre string i.e. ‘Romance’ would match ‘(Comedy, Drama, Indie, Romance)’
+      # @macro search.params
+      # @macro raise.NewznabAPIError
+      # @return [Newznab::SearchResults]
+      # @since 0.1.0
+      def movie_search(imdbid: nil, genre: nil, **params)
+        args = _parse_search_args(**params)
+
+        unless imdbid.nil?
+          args[:imdbid] = imdbid.to_s.encode('utf-8')
+        end
+
+        unless genre.nil?
+          args[:season] = genre.to_s.encode('utf-8')
+        end
+
+        Newznab::Api::SearchResults.new(_make_request(:movie, **args), :tvsearch, args)
       end
 
       ##
