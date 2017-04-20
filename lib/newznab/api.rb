@@ -138,7 +138,7 @@ module Newznab
       end
 
       ##
-      # Perform a tv-search with the provided optional params
+      # Perform a movie-search with the provided optional params
       # @param imdbid [String] IMDB id of the item being queried e.g. 0058935.
       # @param genre [String] A genre string i.e. ‘Romance’ would match ‘(Comedy, Drama, Indie, Romance)’
       # @macro search.params
@@ -153,6 +153,11 @@ module Newznab
         end
 
         unless genre.nil?
+          args[:genre] = genre.to_s.encode('utf-8')
+        end
+
+        Newznab::Api::SearchResults.new(_make_request(:movie, **args), :movie, args)
+      end
           args[:season] = genre.to_s.encode('utf-8')
         end
 
