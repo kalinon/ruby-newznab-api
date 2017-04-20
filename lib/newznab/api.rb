@@ -1,8 +1,38 @@
 require 'newznab/api/version'
 
+## Yard Doc generation stuff
+# @!macro [new] raise.FunctionNotSupportedError
+#   @raise [FunctionNotSupportedError] indicating the resource requested is not supported
+# @!macro [new] raise.NewznabAPIError
+#   @raise [NewznabAPIError] indicating the api request code received
+
+##
+# Base Newznab module
+# @since 0.1.0
 module Newznab
+
+  ##
+  # Class to interact and query the Newznab API
+  # @since 0.1.0
   module Api
     API_FORMAT = 'json'
+
+    ##
+    # Raised when a function is not implemented on the current API
+    #
+    # Must be included in {Newznab::Api::API_FUNCTIONS}
+    #
+    # @since 0.1.0
+    class FunctionNotSupportedError < ScriptError
+    end
+
+    ##
+    # Raised when a Newznab API error is encountered
+    #
+    # @since 0.1.0
+    class NewznabAPIError < ScriptError
+    end
+
 
     class << self
 
