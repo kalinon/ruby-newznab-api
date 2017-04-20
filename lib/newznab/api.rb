@@ -2,6 +2,7 @@ require 'newznab/api/version'
 require 'rest-client'
 require 'cgi'
 require 'json'
+require 'mono_logger'
 
 ## Yard Doc generation stuff
 # @!macro [new] raise.FunctionNotSupportedError
@@ -40,7 +41,7 @@ module Newznab
 
     class << self
 
-      attr_accessor :api_uri, :api_key, :api_timeout
+      attr_accessor :api_uri, :api_key, :api_timeout, :logger
 
       ##
       # @return [Newznab::API]
@@ -48,6 +49,9 @@ module Newznab
       # @param key [String] Newznab API Key
       # @since 0.1.0
       def new(uri: nil, key: nil)
+
+        @logger = MonoLogger.new(STDOUT)
+        @logger.level = MonoLogger::DEBUG
 
         # Newznab API Key. Set to the environmental variable NEWZNAB_API_KEY by default if present
         @api_key = ENV['NEWZNAB_API_KEY'] || nil
@@ -116,6 +120,7 @@ module Newznab
       def _make_request(function, **params)
 
         unless API_FUNCTIONS.include?(function)
+          logger.error("Function #{function.to_s} not supported")
           raise FunctionNotSupportedError, "Function #{function.to_s} not supported"
         end
 
@@ -126,7 +131,7 @@ module Newznab
       # Executes api request based on provided +resource+ and +params+
       #
       # @example Make a simple request with +limit: 1+
-      #   _make_url_request('http://newznabserver.com', limit: 1)
+      #   _make_url_request('http://newznabserver.com/api', t: :caps)
       #
       # @param url [String] Request url
       # @param function [Symbol] Newznab function
@@ -137,6 +142,8 @@ module Newznab
       def _make_url_request(url, function, **params)
         # Default options hash
         options = {
+            accept: :json,
+            content_type: :json,
             params: {
                 apikey: self.api_key,
                 o: Newznab::Api::API_FORMAT,
@@ -147,8 +154,9 @@ module Newznab
         options[:params].merge! params
 
         begin
-          # Sleep for 1 sec to avoid rate limit
-          sleep 1
+          logger.debug("Request URL: #{url}")
+          logger.debug("Request headers: #{options.to_json}")
+
           # Perform request
           request = RestClient::Request.execute(
               method: :get,
@@ -156,20 +164,23 @@ module Newznab
               timeout: self.api_timeout,
               headers: options,
           )
-            #request = RestClient.get(url, options)
+
         rescue RestClient::NotFound, RestClient::Exceptions::ReadTimeout => e
+          logger.error(e.message)
           raise NewznabAPIError, e.message
         end
 
         case request.code
           when 200
             req = JSON.parse(request.body)
-            if req['error'].eql?('OK')
+            if req
               req
             else
+              logger.error(req['error'])
               raise NewznabAPIError, req['error']
             end
           else
+            logger.error('Recived a '+request.code+' http response')
             raise NewznabAPIError, 'Recived a '+request.code+' http response'
         end
       end

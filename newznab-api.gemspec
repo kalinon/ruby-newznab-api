@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
 
   # Dependencies
   spec.add_dependency 'rest-client', '~> 2.0'
+  spec.add_dependency 'mono_logger'
 end
