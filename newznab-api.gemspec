@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'yard', '~> 0.9', '>= 0.9.5'
   spec.add_development_dependency 'dotenv-rails'
   spec.add_development_dependency 'faker'
+  spec.add_development_dependency 'minitest-vcr'
 
   # Dependencies
   spec.add_dependency 'rest-client', '~> 2.0'

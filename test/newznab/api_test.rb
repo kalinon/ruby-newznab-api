@@ -1,6 +1,8 @@
 require 'test_helper'
+require 'newznab/api'
 
 class Newznab::ApiTest < Minitest::Test
+
   def test_that_it_has_a_version_number
     refute_nil ::Newznab::Api::VERSION
   end
@@ -64,8 +66,9 @@ class Newznab::ApiTest < Minitest::Test
   def test_search
     refute_nil newznab
     assert_nothing_raised do
-      refute_nil newznab.caps
-      assert_equal 'yes', newznab.caps['searching']['search']['@attributes']['available']
+      # Should not call more than one http request per test for VCR
+      # refute_nil newznab.caps
+      # assert_equal 'yes', newznab.caps['searching']['search']['@attributes']['available']
       resp = newznab.search(limit: 5)
       refute_nil resp
       assert_equal 5, resp['channel']['item'].count

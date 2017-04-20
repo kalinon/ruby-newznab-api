@@ -3,10 +3,17 @@ ENV['RACK_ENV'] = 'test'
 
 require 'newznab/api'
 require 'minitest/autorun'
-require 'minitest/reporters'
 require 'faker'
 
+require 'minitest/reporters'
 MiniTest::Reporters.use!
+
+require 'minitest-vcr'
+VCR.configure do |c|
+  c.cassette_library_dir = 'test/cassettes'
+  c.hook_into :webmock
+end
+MinitestVcr::Spec.configure!
 
 module Minitest::Assertions
   def assert_nothing_raised(*)
@@ -21,4 +28,11 @@ class Minitest::Test
     @newz ||= Newznab::Api.new
   end
 
+  def before_setup
+    VCR.insert_cassette name
+  end
+
+  def after_teardown
+    VCR.eject_cassette
+  end
 end
