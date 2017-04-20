@@ -109,12 +109,20 @@ module Newznab
           params[:q] = URI::encode(query.encode('utf-8'))
         end
 
-        unless group.empty?
-          params[:group] = group.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        unless maxage.nil?
+          params[:maxage] = maxage.to_i
         end
 
-        unless limit.empty?
-          params[:limit] = limit.collect { |o| o.to_s.encode('utf-8') }.join(',')
+        unless offset.nil?
+          params[:offset] = offset.to_i
+        end
+
+        unless limit.nil?
+          params[:limit] = limit.to_i
+        end
+
+        unless group.empty?
+          params[:group] = group.collect { |o| o.to_s.encode('utf-8') }.join(',')
         end
 
         unless cat.empty?
@@ -123,14 +131,6 @@ module Newznab
 
         unless attrs.empty?
           params[:group] = attrs.collect { |o| o.to_s.encode('utf-8') }.join(',')
-        end
-
-        unless maxage.nil?
-          params[:maxage] = maxage.to_i
-        end
-
-        unless offset.nil?
-          params[:offset] = offset.to_i
         end
 
         _make_request(:search, **params)
