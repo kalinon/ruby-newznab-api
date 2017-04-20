@@ -1,4 +1,7 @@
 require 'newznab/api/version'
+require 'rest-client'
+require 'cgi'
+require 'json'
 
 ## Yard Doc generation stuff
 # @!macro [new] raise.FunctionNotSupportedError
@@ -16,6 +19,7 @@ module Newznab
   # @since 0.1.0
   module Api
     API_FORMAT = 'json'
+    API_FUNCTIONS = [:caps, :search]
 
     ##
     # Raised when a function is not implemented on the current API
@@ -35,6 +39,8 @@ module Newznab
 
 
     class << self
+
+      attr_accessor :api_uri, :api_key, :api_timeout
 
       ##
       # @return [Newznab::API]
@@ -65,51 +71,107 @@ module Newznab
       end
 
       ##
-      # Returns Newznab API Key. Set to the environmental variable NEWZNAB_URI by default if present
-      # @return [String]
+      # Query the server for supported features and the protocol version and other metadata
+      # @return [Hash]
       # @since 0.1.0
-      def api_uri
-        @api_uri || ENV['NEWZNAB_URI']
+      # @macro raise.NewznabAPIError
+      def caps
+        _make_request(:caps)
       end
 
       ##
-      # Sets the Newznab API Uri. Overrides the environmental variable NEWZNAB_URI
-      # @param uri [String]
+      # @param function [Symbol] Newznab function
+      # @param params [Hash] The named key value pairs of query parameters
+      # @macro raise.NewznabAPIError
+      # @macro raise.FunctionNotSupportedError
+      def get(function, **params)
+        _make_request(function, **params)
+      end
+
+      private
+
+      ##
+      # Will attempt to parse the {api_uri} and append '/api' to the end if needed
       # @since 0.1.0
-      def api_uri=(uri)
-        @api_uri = uri
+      def _build_base_url
+        if self.api_uri.to_s.match(/\/api$/)
+          self.api_uri
+        else
+          self.api_uri + '/api'
+        end
       end
 
       ##
-      # Returns Newznab API Key. Set to the environmental variable NEWZNAB_API_KEY by default if present
-      # @return [String]
+      # Executes api request based on provided +function+ and +params+
+      #
+      # @example Return 5 results from the +:characters+ resource
+      #   _make_request(:characters, limit: 5)
+      #
+      # @param function [Symbol] Newznab function
+      # @param params [Hash] The named key value pairs of query parameters
+      # @return [Hash]
       # @since 0.1.0
-      def api_key
-        @api_key || ENV['NEWZNAB_API_KEY']
+      # @macro raise.NewznabAPIError
+      # @macro raise.FunctionNotSupportedError
+      def _make_request(function, **params)
+
+        unless API_FUNCTIONS.include?(function)
+          raise FunctionNotSupportedError, "Function #{function.to_s} not supported"
+        end
+
+        _make_url_request(_build_base_url, function, params)
       end
 
       ##
-      # Sets the Newznab API Key. Overrides the environmental variable NEWZNAB_API_KEY
-      # @param key [String]
+      # Executes api request based on provided +resource+ and +params+
+      #
+      # @example Make a simple request with +limit: 1+
+      #   _make_url_request('http://newznabserver.com', limit: 1)
+      #
+      # @param url [String] Request url
+      # @param function [Symbol] Newznab function
+      # @param params [Hash] optional request parameters
+      # @return [Hash]
       # @since 0.1.0
-      def api_key=(key)
-        @api_key = key
-      end
+      # @macro raise.NewznabAPIError
+      def _make_url_request(url, function, **params)
+        # Default options hash
+        options = {
+            params: {
+                apikey: self.api_key,
+                o: Newznab::Api::API_FORMAT,
+                t: function.to_s,
+            }
+        }
 
-      ##
-      # Returns Newznab API request timeout value
-      # @return [Integer]
-      # @since 0.1.2
-      def api_timeout
-        @api_timeout
-      end
+        options[:params].merge! params
 
-      ##
-      # Sets the Newznab API request timeout value in seconds
-      # @param seconds [Integer]
-      # @since 0.1.0
-      def api_timeout=(seconds)
-        @api_timeout = seconds.to_i
+        begin
+          # Sleep for 1 sec to avoid rate limit
+          sleep 1
+          # Perform request
+          request = RestClient::Request.execute(
+              method: :get,
+              url: url,
+              timeout: self.api_timeout,
+              headers: options,
+          )
+            #request = RestClient.get(url, options)
+        rescue RestClient::NotFound, RestClient::Exceptions::ReadTimeout => e
+          raise NewznabAPIError, e.message
+        end
+
+        case request.code
+          when 200
+            req = JSON.parse(request.body)
+            if req['error'].eql?('OK')
+              req
+            else
+              raise NewznabAPIError, req['error']
+            end
+          else
+            raise NewznabAPIError, 'Recived a '+request.code+' http response'
+        end
       end
 
     end
