@@ -22,9 +22,9 @@ task :default => :test
 
 Rake::Task['build'].enhance do
   require 'digest/sha2'
-  built_gem_path = 'pkg/comicvine-'+Newznab::Api::VERSION+'.gem'
+  built_gem_path = 'pkg/newznab-api-'+Newznab::Api::VERSION+'.gem'
   checksum = Digest::SHA256.new.hexdigest(File.read(built_gem_path))
-  checksum_path = 'checksum/comicvine-'+Newznab::Api::VERSION+'.gem.sha256'
+  checksum_path = 'checksum/newznab-api-'+Newznab::Api::VERSION+'.gem.sha256'
   File.open(checksum_path, 'w') { |f| f.write(checksum) }
 end
 

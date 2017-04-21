@@ -31,12 +31,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest-reporters', '~> 1.1', '>= 1.1.12'
   spec.add_development_dependency 'rdoc', '~> 4.2', '>= 4.2.1'
   spec.add_development_dependency 'yard', '~> 0.9', '>= 0.9.5'
-  spec.add_development_dependency 'dotenv-rails'
-  spec.add_development_dependency 'faker'
-  spec.add_development_dependency 'minitest-vcr'
-  spec.add_development_dependency 'nokogiri'
+  spec.add_development_dependency 'dotenv-rails', '~> 2.2'
+  spec.add_development_dependency 'faker', '~> 1.7', '>= 1.7.3'
+  spec.add_development_dependency 'minitest-vcr', '~> 1.4'
+  spec.add_development_dependency 'nokogiri', '~> 1.7', '>= 1.7.1'
 
   # Dependencies
   spec.add_dependency 'rest-client', '~> 2.0'
-  spec.add_dependency 'mono_logger'
+  spec.add_dependency 'mono_logger', '~> 1.1'
 end
