@@ -63,7 +63,6 @@ class Newznab::ApiTest < Minitest::Test
     end
   end
 
-  # FIXME
   def test_details
     guid = 'e5c0b4a8c2f16827d87ca1593929348d'
     assert_nothing_raised do

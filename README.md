@@ -20,9 +20,29 @@ Or install it yourself as:
 
     $ gem install newznab-api
 
+Then set a environmental variables named `NEWZNAB_API_KEY` and `NEWZNAB_URI` to auto connect **(optional)**
+
+    $ export NEWZNAB_URI=https://api.newznab.com
+    $ export NEWZNAB_API_KEY=7e8896464895c1cde33759b8307f5cf8
+
+
 ## Usage
 
-TODO: Write usage instructions here
+If you did not set the env variables `NEWZNAB_API_KEY` or `NEWZNAB_URI` then you need to set the class `api_key` and `uri` before using. If you did set the env variable you do not need to set this.
+
+```ruby
+Newznab::Api.new(uri: 'https://api.newznab.com', key: '7e8896464895c1cde33759b8307f5cf8')
+```
+
+
+Perform a search:
+
+```ruby
+resp = newznab.search(query: 'This Old House', limit: 50)
+```
+
+
+
 
 ## Development
 
@@ -32,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/newznab-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/kalinon/newznab-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

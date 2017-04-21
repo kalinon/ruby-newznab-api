@@ -63,6 +63,8 @@ module Newznab
       attr_accessor :api_uri, :api_key, :api_timeout, :api_rate_limit, :logger
 
       ##
+      # @example
+      #   Newznab::Api.new(uri: 'https://api.newznab.com', key: '7e8896464895c1cde33759b8307f5cf8')
       # @return [Newznab::API]
       # @param uri [String] Newznab API Uri
       # @param key [String] Newznab API Key
