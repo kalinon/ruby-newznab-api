@@ -120,7 +120,7 @@ module Newznab
       # @param guid [String] The GUID of the item being queried.
       # @since 0.1.0
       def get_details(guid)
-        resp = _make_request(:details, guid: guid)
+        resp = _make_request(:details, id: guid)
         if resp['channel']['item']
           Newznab::Api::Item.new(resp['channel']['item'])
         else
@@ -133,9 +133,9 @@ module Newznab
       # @param guid [String] The GUID of the item being queried.
       # @since 0.1.0
       def get_nfo(guid)
-        resp = _make_request(:getnfo, guid: guid)
-        if resp['channel']['item']
-          Newznab::Api::Item.new(resp['channel']['item'])
+        resp = _make_request(:getnfo, id: guid)
+        if resp['channel']['item']['description']
+          resp['channel']['item']['description']
         else
           nil
         end

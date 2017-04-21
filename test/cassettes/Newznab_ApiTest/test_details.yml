@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&id=e5c0b4a8c2f16827d87ca1593929348d&o=json&t=details
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 20 Apr 2017 23:56:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=tvgsi3h0hb5733p4dm0e3djl66; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains;
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"newznab","description":"newznab
+        Feed","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"info@newznab.com
+        (newznab)","category":{},"image":{"url":"https:\/\/api.newznab.com\/views\/images\/logo.png","title":"newznab","link":"https:\/\/api.newznab.com\/","description":"Visit
+        newznab - A quick usenet indexer"},"item":{"title":"Ask.This.Old.House.S15E19.1080p.WEBRip.AAC2.0.x264-AJP69","guid":"https:\/\/api.newznab.com\/details\/e5c0b4a8c2f16827d87ca1593929348d","link":"https:\/\/api.newznab.com\/getnzb\/e5c0b4a8c2f16827d87ca1593929348d.nzb&i=185135&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/e5c0b4a8c2f16827d87ca1593929348d#comments","pubDate":"Mon,
+        17 Apr 2017 23:21:39 +0200","category":"TV > HD","description":"Ask.This.Old.House.S15E19.1080p.WEBRip.AAC2.0.x264-AJP69","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/e5c0b4a8c2f16827d87ca1593929348d.nzb&i=185135&r=7e8896464895c1cde33759b8307f5cf8","length":"575685091","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"5000"}},{"@attributes":{"name":"category","value":"5040"}},{"@attributes":{"name":"size","value":"575685091"}},{"@attributes":{"name":"files","value":"1"}},{"@attributes":{"name":"poster","value":"nEwZ[NZB]
+        <pr3d@NET.world>"}},{"@attributes":{"name":"guid","value":"e5c0b4a8c2f16827d87ca1593929348d"}},{"@attributes":{"name":"season","value":"S15"}},{"@attributes":{"name":"episode","value":"E19"}},{"@attributes":{"name":"rageid","value":"2657"}},{"@attributes":{"name":"tvdbid","value":"74326"}},{"@attributes":{"name":"tvairdate","value":"Sat,
+        15 Apr 2017 00:00:00 +0200"}},{"@attributes":{"name":"grabs","value":"13"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Mon,
+        17 Apr 2017 23:18:40 +0200"}},{"@attributes":{"name":"group","value":"alt.binaries.drummers"}}]}}}'
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 23:56:47 GMT
+recorded_with: VCR 3.0.3

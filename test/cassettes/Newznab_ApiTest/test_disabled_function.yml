@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&guid=8610de2d24383b1efd513da1b30e96b5&o=json&t=details
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&id=8610de2d24383b1efd513da1b30e96b5&o=json&t=details
     body:
       encoding: US-ASCII
       string: ''
@@ -51,7 +51,7 @@ http_interactions:
   recorded_at: Thu, 20 Apr 2017 22:30:56 GMT
 - request:
     method: get
-    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&guid=8610de2d24383b1efd513da1b30e96b5&o=json&t=getnfo
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&id=8610de2d24383b1efd513da1b30e96b5&o=json&t=getnfo
     body:
       encoding: US-ASCII
       string: ''
