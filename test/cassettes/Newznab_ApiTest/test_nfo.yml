@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&id=d63ae95ed6c5315a33fcb3a76ed838b9&o=json&t=getnfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Apr 2017 00:03:49 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - PHPSESSID=a75ilb10pk5condtnd7d9k86u1; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains;
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"newznab
+        NFO","description":"NFO","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"info@newznab.com
+        (newznab)","category":{},"image":{"url":"https:\/\/api.newznab.com\/views\/images\/logo.png","title":"newznab","link":"https:\/\/api.newznab.com\/","description":"Visit
+        newznab - A quick usenet indexer"},"item":{"title":"Ask.This.Old.House.S15E07.720p.Reclaimed.Bench.Robotic.Wall.HDTV.x264-CRiMSON","guid":"https:\/\/api.newznab.com\/details\/d63ae95ed6c5315a33fcb3a76ed838b9","link":"https:\/\/api.newznab.com\/nfo\/d63ae95ed6c5315a33fcb3a76ed838b9","pubDate":"Tue,
+        21 Feb 2017 04:52:51 +0100","description":"==================-[CRiMSON PROUDLY
+        PRESENTS ]-==================\nGot something to offer..email us at weluvcrimson@protonmail.ch\nNow
+        looking for pd\/hd cappers\nAsk.This.Old.House.S15E07.720p.Reclaimed.Bench.Robotic.Wall.HDTV.x264-CRiMSON\nSource:
+        HDTV\nRelease Date: 02.20.2017\nNotes:\n===============================-LW-===============================\n******************************GROUP
+        INFO***********************\nA. We don''t do 720p Rls yet. Our ISP bandwidth
+        limitations does not permit it, So stop asking. Most sites barely want the
+        documentary, Reality, etc that done now in SD, definitely not 720p taking
+        up site space. We focus on rlsing stuff that is over look and missed so at
+        leasts its out there. If you want to do the 720s go ahead...have at it.\n&\nB.
+        Thanks for catching our Flaws and making us an even better GROUP\n","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/api?t=getnfo&id=d63ae95ed6c5315a33fcb3a76ed838b9&raw=1&i=185135&r=7e8896464895c1cde33759b8307f5cf8","length":"826","type":"text\/x-nfo"}}}}}'
+    http_version: 
+  recorded_at: Fri, 21 Apr 2017 00:03:49 GMT
+recorded_with: VCR 3.0.3

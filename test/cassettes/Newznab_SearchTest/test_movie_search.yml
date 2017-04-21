@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.newznab.com/api?apikey=7e8896464895c1cde33759b8307f5cf8&del=0&extended=1&limit=5&o=json&q=Sparticus&t=movie
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.1 (darwin16.4.0 x86_64) ruby/2.3.3p222
+      Content-Type:
+      - application/json
+      Host:
+      - api.newznab.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.10.0 (Ubuntu)
+      Date:
+      - Thu, 20 Apr 2017 21:01:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.17
+      Set-Cookie:
+      - PHPSESSID=4ejbdv41p6ieipvogauipurvl1; path=/
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: '{"@attributes":{"version":"2.0"},"channel":{"title":"newznab","description":"newznab
+        Feed","link":"https:\/\/api.newznab.com\/","language":"en-gb","webMaster":"webadmin@newznab.com
+        (newznab)","category":{},"image":{"url":"https:\/\/api.newznab.com\/templates\/default\/images\/banner.jpg","title":"newznab","link":"https:\/\/api.newznab.com\/","description":"Visit
+        newznab - Wordpress manager"},"response":{"@attributes":{"offset":"0","total":"10000"}},"item":[{"title":"Christine
+        1983 1080p GBR Blu-ray AVC DTS-HD MA 5.1","guid":"https:\/\/api.newznab.com\/details\/aca3e3afc9c9f0f636ad66d8ec946b29","link":"https:\/\/api.newznab.com\/getnzb\/aca3e3afc9c9f0f636ad66d8ec946b29.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/aca3e3afc9c9f0f636ad66d8ec946b29#comments","pubDate":"Fri,
+        21 Apr 2017 06:35:43 +1000","category":"Movies > HD","description":"Christine
+        1983 1080p GBR Blu-ray AVC DTS-HD MA 5.1","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/aca3e3afc9c9f0f636ad66d8ec946b29.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"51958019279","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2040"}},{"@attributes":{"name":"size","value":"51958019279"}},{"@attributes":{"name":"guid","value":"aca3e3afc9c9f0f636ad66d8ec946b29"}},{"@attributes":{"name":"files","value":"256"}},{"@attributes":{"name":"poster","value":"NewsUP
+        <NewsUp@somewhere.cbr>"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"0085333"}},{"@attributes":{"name":"imdbtitle","value":"Christine"}},{"@attributes":{"name":"imdbtagline","value":"How
+        do you kill something that can''t possibly be alive?"}},{"@attributes":{"name":"imdbplot","value":"Geeky
+        student Arnie Cunningham falls for Christine, a rusty 1958 Plymouth Fury,
+        and becomes obsessed with restoring the classic automobile to her former glory.
+        As the car changes, so does Arnie, whose newfound confidence turns to arrogance
+        behind the wheel of his exotic beauty. Arnie''s girlfriend Leigh and best
+        friend Dennis reach out to him, only to be met by a Fury like no other."}},{"@attributes":{"name":"imdbscore","value":"6.6"}},{"@attributes":{"name":"genre","value":"Mystery,
+        Drama, Horror, Thriller"}},{"@attributes":{"name":"imdbyear","value":"1983"}},{"@attributes":{"name":"imdbdirector","value":"John
+        Carpenter"}},{"@attributes":{"name":"imdbactors","value":"Keith Gordon, John
+        Stockwell, Alexandra Paul"}},{"@attributes":{"name":"coverurl","value":"https:\/\/api.newznab.com\/covers\/movies\/0085333-cover.jpg"}},{"@attributes":{"name":"backdropurl","value":"https:\/\/api.newznab.com\/covers\/movies\/0085333-backdrop.jpg"}},{"@attributes":{"name":"grabs","value":"4"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 04:37:01 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.movies"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"Moontrap.Target.Earth.2017.DVDRip.x264-EiDER","guid":"https:\/\/api.newznab.com\/details\/bd92e4fd765c040489c29ab213630292","link":"https:\/\/api.newznab.com\/getnzb\/bd92e4fd765c040489c29ab213630292.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/bd92e4fd765c040489c29ab213630292#comments","pubDate":"Fri,
+        21 Apr 2017 06:27:35 +1000","category":"Movies > SD","description":"Moontrap.Target.Earth.2017.DVDRip.x264-EiDER","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/bd92e4fd765c040489c29ab213630292.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"487333477","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2030"}},{"@attributes":{"name":"size","value":"487333477"}},{"@attributes":{"name":"guid","value":"bd92e4fd765c040489c29ab213630292"}},{"@attributes":{"name":"files","value":"39"}},{"@attributes":{"name":"poster","value":"diamonds@Pussycat.com"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"3705822"}},{"@attributes":{"name":"imdbtitle","value":"Moontrap
+        Target Earth"}},{"@attributes":{"name":"imdbplot","value":"A long forgotten
+        ancient spacecraft discovered on Earth. Investigations carried out by Scout
+        transport her to the moon whereupon she meets the impressive machines preserving
+        the wisdom of that long lost civilization."}},{"@attributes":{"name":"imdbscore","value":"2.9"}},{"@attributes":{"name":"genre","value":"Action,
+        Science Fiction, Adventure"}},{"@attributes":{"name":"imdbyear","value":"2017"}},{"@attributes":{"name":"imdbdirector","value":"Robert
+        Dyke"}},{"@attributes":{"name":"imdbactors","value":"Sarah Butler, Damon Dayoub,
+        Charles Shaughnessy"}},{"@attributes":{"name":"coverurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3705822-cover.jpg"}},{"@attributes":{"name":"backdropurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3705822-backdrop.jpg"}},{"@attributes":{"name":"grabs","value":"2"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 04:14:34 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.solar-xl"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"Hacker.2016.BDRip.XviD.AC3-EVO","guid":"https:\/\/api.newznab.com\/details\/95e829b64fb53cc60fca8ac373dba833","link":"https:\/\/api.newznab.com\/getnzb\/95e829b64fb53cc60fca8ac373dba833.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/95e829b64fb53cc60fca8ac373dba833#comments","pubDate":"Fri,
+        21 Apr 2017 06:10:08 +1000","category":"Movies > SD","description":"Hacker.2016.BDRip.XviD.AC3-EVO","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/95e829b64fb53cc60fca8ac373dba833.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"1692074893","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2030"}},{"@attributes":{"name":"size","value":"1692074893"}},{"@attributes":{"name":"guid","value":"95e829b64fb53cc60fca8ac373dba833"}},{"@attributes":{"name":"files","value":"40"}},{"@attributes":{"name":"poster","value":"diamonds@Pussycat.com"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"3173594"}},{"@attributes":{"name":"imdbtitle","value":"Hacker"}},{"@attributes":{"name":"imdbtagline","value":"Real
+        Story. Real Hacker."}},{"@attributes":{"name":"imdbplot","value":"Alex is
+        a young Ukrainian immigrant, who supports his parents by doing illegal jobs
+        on the internet. His best friend Sye is a black market dealer, who helps Alex
+        make money. Kira - who has feelings for Alex - is a mole, working for the
+        feds."}},{"@attributes":{"name":"imdbscore","value":"6.4"}},{"@attributes":{"name":"genre","value":"Thriller,
+        Crime, Drama"}},{"@attributes":{"name":"imdbyear","value":"2016"}},{"@attributes":{"name":"imdbdirector","value":"Akan
+        Satayev"}},{"@attributes":{"name":"imdbactors","value":"Callan McAuliffe,
+        Lorraine Nicholson, Daniel Eric Gold"}},{"@attributes":{"name":"coverurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3173594-cover.jpg"}},{"@attributes":{"name":"backdropurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3173594-backdrop.jpg"}},{"@attributes":{"name":"grabs","value":"2"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 03:48:45 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.solar-xl"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"Dukhtar.2014.1080p.BluRay.x264-USURY","guid":"https:\/\/api.newznab.com\/details\/b41d809bf6ef9a729884599e93609fe8","link":"https:\/\/api.newznab.com\/getnzb\/b41d809bf6ef9a729884599e93609fe8.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/b41d809bf6ef9a729884599e93609fe8#comments","pubDate":"Fri,
+        21 Apr 2017 04:29:53 +1000","category":"Movies > HD","description":"Dukhtar.2014.1080p.BluRay.x264-USURY","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/b41d809bf6ef9a729884599e93609fe8.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"9370009282","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2040"}},{"@attributes":{"name":"size","value":"9370009282"}},{"@attributes":{"name":"guid","value":"b41d809bf6ef9a729884599e93609fe8"}},{"@attributes":{"name":"files","value":"93"}},{"@attributes":{"name":"poster","value":"diamonds@Pussycat.com"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"3175888"}},{"@attributes":{"name":"imdbtitle","value":"Dukhtar"}},{"@attributes":{"name":"imdbplot","value":"In
+        the mountains of Pakistan, a mother and her ten-year-old daughter flee their
+        home on the eve of the girl''s marriage to a tribal leader. A deadly hunt
+        for them begins."}},{"@attributes":{"name":"imdbscore","value":"7.1"}},{"@attributes":{"name":"genre","value":"Drama,
+        Thriller"}},{"@attributes":{"name":"imdbyear","value":"2014"}},{"@attributes":{"name":"imdbdirector","value":"Afia
+        Nathaniel"}},{"@attributes":{"name":"imdbactors","value":"Samiya Mumtaz, Mohib
+        Mirza, Saleha Aref"}},{"@attributes":{"name":"coverurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3175888-cover.jpg"}},{"@attributes":{"name":"backdropurl","value":"https:\/\/api.newznab.com\/covers\/movies\/3175888-backdrop.jpg"}},{"@attributes":{"name":"grabs","value":"8"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 02:44:29 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.solar-xl"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]},{"title":"The.Resurrection.of.Gavin.Stone.2017.BRRip.XviD.AC3-EVO","guid":"https:\/\/api.newznab.com\/details\/a09392c93cd7c4eb457b872b17855fcf","link":"https:\/\/api.newznab.com\/getnzb\/a09392c93cd7c4eb457b872b17855fcf.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","comments":"https:\/\/api.newznab.com\/details\/a09392c93cd7c4eb457b872b17855fcf#comments","pubDate":"Fri,
+        21 Apr 2017 02:18:35 +1000","category":"Movies > SD","description":"The.Resurrection.of.Gavin.Stone.2017.BRRip.XviD.AC3-EVO","enclosure":{"@attributes":{"url":"https:\/\/api.newznab.com\/getnzb\/a09392c93cd7c4eb457b872b17855fcf.nzb&i=42330&r=7e8896464895c1cde33759b8307f5cf8","length":"1718369034","type":"application\/x-nzb"}},"attr":[{"@attributes":{"name":"category","value":"2000"}},{"@attributes":{"name":"category","value":"2030"}},{"@attributes":{"name":"size","value":"1718369034"}},{"@attributes":{"name":"guid","value":"a09392c93cd7c4eb457b872b17855fcf"}},{"@attributes":{"name":"files","value":"41"}},{"@attributes":{"name":"poster","value":"diamonds@Pussycat.com"}},{"@attributes":{"name":"rageid","value":""}},{"@attributes":{"name":"imdb","value":"4902904"}},{"@attributes":{"name":"imdbtitle","value":"The
+        Resurrection of Gavin Stone"}},{"@attributes":{"name":"imdbtagline","value":"If
+        church can change him it will take a miracle."}},{"@attributes":{"name":"imdbplot","value":"Gavin
+        Stone, a washed-up former child star, is forced to do community service at
+        a local megachurch and pretends to be Christian so he can land the part of
+        Jesus in their annual Passion Play, only to discover that the most important
+        role of his life is far from Hollywood."}},{"@attributes":{"name":"imdbscore","value":"6.6"}},{"@attributes":{"name":"genre","value":"Romance,
+        Comedy, Family"}},{"@attributes":{"name":"imdbyear","value":"2016"}},{"@attributes":{"name":"imdbdirector","value":"Dallas
+        Jenkins"}},{"@attributes":{"name":"imdbactors","value":"Brett Dalton, Anjelah
+        Johnson-Reyes, Shawn Michaels"}},{"@attributes":{"name":"coverurl","value":"https:\/\/api.newznab.com\/covers\/movies\/4902904-cover.jpg"}},{"@attributes":{"name":"backdropurl","value":"https:\/\/api.newznab.com\/covers\/movies\/4902904-backdrop.jpg"}},{"@attributes":{"name":"grabs","value":"11"}},{"@attributes":{"name":"comments","value":"0"}},{"@attributes":{"name":"password","value":"0"}},{"@attributes":{"name":"usenetdate","value":"Fri,
+        21 Apr 2017 00:07:34 +1000"}},{"@attributes":{"name":"group","value":"alt.binaries.solar-xl"}},{"@attributes":{"name":"oz_num_spam_reports","value":"0"}},{"@attributes":{"name":"oz_spam_confirmed","value":"no"}},{"@attributes":{"name":"oz_num_passworded_reports","value":"0"}},{"@attributes":{"name":"oz_passworded_confirmed","value":"no"}},{"@attributes":{"name":"oz_up_votes","value":"0"}},{"@attributes":{"name":"oz_down_votes","value":"0"}},{"@attributes":{"name":"oz_video_quality_rating","value":"0"}},{"@attributes":{"name":"oz_audio_quality_rating","value":"0"}}]}]}}'
+    http_version: 
+  recorded_at: Thu, 20 Apr 2017 21:01:23 GMT
+recorded_with: VCR 3.0.3
